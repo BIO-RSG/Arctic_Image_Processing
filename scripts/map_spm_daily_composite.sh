@@ -16,8 +16,9 @@ J=-JS234/90/16c
 gmt makecpt -V -Crainbow -T0.1/1000/1  -Qo -Z  > spm.cpt
 
 filename=$1
-year=${filename:1:4}
-day=${filename:5:3}
+filestr=`echo "$filename" | grep -oP "A[0-9]{7}"`
+year=${filestr:1:4}
+day=${filestr:5:3}
 echo $year $day
 
 # Make tmp file to map
