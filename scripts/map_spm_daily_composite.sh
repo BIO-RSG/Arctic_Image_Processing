@@ -32,5 +32,4 @@ gmt pstext -R0/24/0/30 -JX16/16 -G255/255/255 -O -V -N -P  << EOF >> ${filename}
 EOF
 # Print
 gmt psconvert -A -E150 -Tj ${filename}.ps
-rm *.ps
 rm tmpspm.grd
