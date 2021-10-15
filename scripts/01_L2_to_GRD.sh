@@ -12,7 +12,7 @@ latmax=76
 latmin=67.5
 
 # Calculate SPM in python for all L2 files in current directory: need numpy and netCDF4
-for l2name in A*.L2;
+for l2name in ../data/A*.L2;
 do
 
 python ./compute_spm_modisa.py ${l2name:0:-3};
@@ -36,12 +36,12 @@ rm spm.cpt # Remove temporary map grid file
 done
 
 #### Move files ####
-pathmodis=./MODIS
-pathgrd=./GRD
-pathjpg=./JPG
-pathasc=./ASC
+pathmodis=../data/MODIS
+pathgrd=../data/GRD
+pathjpg=../data/JPG
+pathasc=../data/ASC
 
-for l2name in A*.L2; 
+for l2name in ../data/A*.L2; 
 do
 year=${l2name:1:4};
 day=${l2name:5:3};
@@ -61,5 +61,5 @@ mv $jpgname ${pathjpg}/${year}/${day};
 mv $ascname ${pathasc}/${year}/${day};
 done
 
-mkdir -p ./Composites/1day
-Rscript 05_Make_daily_composites_modisa.R
+mkdir -p ../data/Composites/1day
+Rscript make_daily_composites_modisa.R
