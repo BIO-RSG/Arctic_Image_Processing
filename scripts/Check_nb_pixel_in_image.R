@@ -1,19 +1,6 @@
 # Emmanuel Devred Nov 2019
 # Pass arguments to define box area in image to check
 
-# BOX REGIONS:
-# Area to check for processing Mackenzie Delta with raised albedo:
-# lonmax_delta = -129.3
-# lonmin_delta = -140
-# latmax_delta = 71.15
-# latmin_delta = 68.75
-
-# # Large box (full region)
-# lonmax_lg=-122
-# lonmin_lg=-142
-# latmax_lg=72.5
-# latmin_lg=68.5
-
 library(ncdf4)
 
 ##First read in the arguments listed at the command line
