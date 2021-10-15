@@ -3,7 +3,7 @@
 # Make daily composites using the median of all images available in (per pixel)
 grdpath = "../data" # where the GRD files to composite are. This script assue folder structure is GRD/year/day
 mapjpgpath = "./" # where script is to make maps
-writefiles = "../data/Composites/1day"
+writefiles = "../data/Composites/daily"
 
 library(ncdf4)
 library(stringr)

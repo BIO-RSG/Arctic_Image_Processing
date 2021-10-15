@@ -35,31 +35,9 @@ rm gmt.history
 rm spm.cpt # Remove temporary map grid file
 done
 
-#### Move files ####
-pathmodis=../data/MODIS
-pathgrd=../data/GRD
-pathjpg=../data/JPG
-pathasc=../data/ASC
-
-for l2name in ../data/A*.L2; 
-do
-year=${l2name:1:4};
-day=${l2name:5:3};
-echo $year $day;
-ascname=${l2name:0:-3}griddata.asc
-grdname=${l2name:0:-3}*.grd
-jpgname=${l2name:0:-3}griddata.jpg
-# Create output directory
-#mkdir -p ${pathmodis}/$a{year}/${day};
-mkdir -p ${pathgrd}/${year}/${day};
-mkdir -p ${pathjpg}/${year}/${day};
-mkdir -p ${pathasc}/${year}/${day};
-# Move files
-#mv $l2name ${pathmodis}/${year}/${day};
-mv $grdname ${pathgrd}/${year}/${day};
-mv $jpgname ${pathjpg}/${year}/${day};
-mv $ascname ${pathasc}/${year}/${day};
-done
-
-mkdir -p ../data/Composites/1day
+mkdir -p ../data/Composites/daily
+mkdir -p ../data/Composites/monthly
 Rscript ./make_daily_composites_modisa.R
+Rscript ./make_month_composites_modisa.R
+
+# Clean up
