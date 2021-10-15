@@ -62,4 +62,4 @@ mv $ascname ${pathasc}/${year}/${day};
 done
 
 mkdir -p ../data/Composites/1day
-Rscript make_daily_composites_modisa.R
+Rscript ./make_daily_composites_modisa.R
