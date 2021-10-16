@@ -36,16 +36,16 @@ done
 for ascname in ../data/*griddata.asc; 
 do
 gmt xyz2grd $ascname -G${ascname:0:-4}spmhan.grd -I1100e -R/$lonmin/$lonmax/$latmin/$latmax -V;
-gmt xyz2grd -i,0,1,4 $ascname -G${ascname:0:-4}spmdox.grd -I1100e -R/$lonmin/$lonmax/$latmin/$latmax -V;
-# gmt xyz2grd -i,0,1,5 $ascname -G${ascname:0:-4}sst.grd -I1100e -R/$lonmin/$lonmax/$latmin/$latmax -V;
-# gmt xyz2grd -i,0,1,6 $ascname -G${ascname:0:-4}par.grd -I1100e -R/$lonmin/$lonmax/$latmin/$latmax -V;
+gmt xyz2grd -i,0,1,3 $ascname -G${ascname:0:-4}spmdox.grd -I1100e -R/$lonmin/$lonmax/$latmin/$latmax -V;
+# gmt xyz2grd -i,0,1,4 $ascname -G${ascname:0:-4}sst.grd -I1100e -R/$lonmin/$lonmax/$latmin/$latmax -V;
+# gmt xyz2grd -i,0,1,5 $ascname -G${ascname:0:-4}par.grd -I1100e -R/$lonmin/$lonmax/$latmin/$latmax -V;
 done
 
 #### 2a. ####
 # Make jpgs - here doing just for SPM Han
 for grdname in ../data/*spmhan.grd;
 do
-bash ./map_spm_L2.sh ${grdname:0:-4};
+bash ./map_spm_L2.sh ${grdname:0:-10};
 done
 
 #### 3. ####
