@@ -34,7 +34,7 @@ If you place all L2 files to be processed in the `./data` folder, you should not
   * Options for raised albedo processing files (finds files with `delta` in filename from our processing) are to crop to a box (`line 21 - line 25`) **OR** crop using a shapefile (see `line 58`)
   * This script makes daily composite .jpgs with GMT using `./scripts/map_spm_daily_composite.sh`. If not wanted set `line 18: make_jpgs=FALSE`
   
-4. Make monthly composites from files in `./data/Composites/daily` by cycling through dates in filename. 
+4. Make monthly composites with `./scripts/make_month_composites_modisa.R` from files in `./data/Composites/daily` by cycling through dates in filename 
   * Specify combine function on `line 14`, var on `line 19` and bounding box `line 20 - line 23`
   * Makes monthly composite .jpgs with GMT using `./scripts/map_spm_month_composite.sh` if `line 18: make_jpgs=TRUE`
 
