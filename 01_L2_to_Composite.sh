@@ -51,12 +51,13 @@ done
 #### 3. ####
 # Make daily composites from L2 GRD files in ../data folder
 mkdir -p ./data/Composites/daily
-echo "making daily comps"
+echo "making daily composites"
 Rscript ./scripts/make_daily_composites_modisa.R
 
 #### 4. ####
 # Make month composites from the daily composites in ../data/Composites/daily
 mkdir -p ./data/Composites/monthly
+echo "making monthly composites"
 Rscript ./scripts/make_month_composites_modisa.R
 
 ####
