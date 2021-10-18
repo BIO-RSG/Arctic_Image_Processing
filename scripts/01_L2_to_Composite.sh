@@ -45,7 +45,7 @@ done
 # Make jpgs - here doing just for SPM Han
 for grdname in ../data/*spmhan.grd;
 do
-bash ./map_spm_L2.sh ${grdname:0:-10};
+bash ./map_spm_L2.sh ${grdname:0:-4};
 done
 
 #### 3. ####
@@ -68,5 +68,7 @@ rm gmt.history
 rm spm.cpt
 mkdir -p ../data/ASC/
 mkdir -p ../data/GRD/
+mkdir -p ../data/JPG/
 mv ../data/*.asc ../data/ASC/
 mv ../data/*.grd ../data/GRD/
+mv ../data/*.jpg ../data/JPG/
