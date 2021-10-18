@@ -24,7 +24,7 @@ echo $year $day $timestamp
 
 # Make tmp file to map
 #gmt xyz2grd ${filestr}griddata.asc -Gtmpspm.grd -I1100e -R/$lonmin/$lonmax/$latmin/$latmax -V
-cp $filename tmpspm.grd
+cp ${filename}.grd tmpspm.grd
 # Map
 gmt grdview  tmpspm.grd -Cspm.cpt ${region} $J -K -V -Ts -P > ${filename}.ps
 gmt pscoast  $region $J -B4g2/a2g2 -W  -Dh -G180/180/180 -K -O -P  >> ${filename}.ps
