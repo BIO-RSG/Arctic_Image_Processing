@@ -109,8 +109,7 @@ def main(*args):
   # chl = chla[ind] # Also make sure chl, kd and sst have same index as rrs and lon/lat
   #kd = kd490[ind]
   sst_data = sst[ind]
-  kdlee_data = kdlee[ind]
-  nflh_data = nflh[ind]
+  #kdlee_data = kdlee[ind]
   par_data = par[ind]
   
   ##### SPM ####
@@ -135,7 +134,7 @@ def main(*args):
   spmhan = (WL * spmL + WH * spmH) / (WL + WH)
   
   # Keeping indices with valid SPM range
-  indmes = np.where ( (spmhan > 0.05) & (spmhan < 1000.) )
+  indmes = np.where ( (spmhan > 0.00) & (spmhan < 1000.) )
     
   nb_good_pxl=longikeep[indmes].size
   print(longitude.size)
