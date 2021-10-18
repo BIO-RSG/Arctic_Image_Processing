@@ -11,7 +11,7 @@ library(sp)
 
 ###########
 combine_function = "median" # "median", "mean", etc. See line 114
-var_code <- "han" # Variable to find data for "sst", "dox","han" etc based on file extension
+var_code = "dox" # Variable to find data for "sst", "dox","han" etc based on file extension
 albedo_box = TRUE # TRUE = crop high albedo to box area, FALSE = Shapefile boundary of high albedo processing
 if (albedo_box) {
   latmin_a = 68.7
