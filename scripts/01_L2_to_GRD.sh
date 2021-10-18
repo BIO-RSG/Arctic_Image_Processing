@@ -66,3 +66,7 @@ rm ../data/*.ps
 rm gmt.conf
 rm gmt.history
 rm spm.cpt
+mkdir -p ../data/ASC/
+mkdir -p ../data/GRD/
+mv ../data/*.asc ../data/ASC/
+mv ../data/*.grd ../data/GRD/
