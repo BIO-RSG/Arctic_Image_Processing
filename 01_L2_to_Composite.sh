@@ -10,17 +10,17 @@ latmin=67.5
 # Notes:
 # - Before processing, to check minimum number of pixels in L2 image can uncomment the following (or change line 149 in compute_spm_modisa.py):
 
-#for l2name in ./data/A*.L2;
-#do
-#	Rscript ./scripts/Check_nb_pixel_in_image.R $l2name $lonmax $lonmin $latmax $latmin
+# for l2name in ./data/A*.L2;
+# do
+# Rscript ./scripts/Check_nb_pixel_in_image.R $l2name $lonmax $lonmin $latmax $latmin
 #   	read -r nbvalpix < nbvalpxl.asc
-#	echo $nbvalpix
-#	if [ $nbvalpix -lt 100 ]; then
-#		echo "not enough pixels"
-#		mv $l2name ../ # For now just moving file if not enough pixels
-#	fi
-#	nbvalpix=""
-#done
+# echo $nbvalpix
+# if [ $nbvalpix -lt 100 ]; then
+# 	echo "not enough pixels"
+# 	mv $l2name ../ # For now just moving file if not enough pixels
+# fi
+# nbvalpix=""
+# done
 
 #### 1. ####
 # L2 NASA flags, q/c and calculate SPM for all L2 files in 'data' directory:
