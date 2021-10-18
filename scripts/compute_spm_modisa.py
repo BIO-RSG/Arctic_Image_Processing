@@ -14,7 +14,7 @@ def main(*args):
   
   #### Define L2 flags and other q/c ####
   l2_flags_to_use = ["LAND","HISATZEN"]
-  solz_layer=TRUE
+  solz_layer=True
   solz_max=74 # Filtering solz layer created in L2 processing 
                 #- remove and use HISOLZEN if no solz layer
                 #- also remove solz from line 105
@@ -101,7 +101,8 @@ def main(*args):
   print(np.shape(latitude))
   print(np.shape(rrs_748))
   
-  if solz_layer=TRUE:
+  if solz_layer==True:
+      print("solz layer in file")
       solz = asarray(gd_group.variables['solz'])
       #### Rm masked pixels, <=0 at 555 and 667 nm and solz > 74 deg ####
       ind=np.where( (masked == 0) & (rrs_555 > 0.) & (rrs_667 > 0.) & (solz <= solz_max) )
