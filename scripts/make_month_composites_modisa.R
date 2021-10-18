@@ -21,9 +21,9 @@ lonmax=-110
 lonmin=-142
 latmax=76
 latmin=67.5
-print(paste("PROCESSING MONTHLY COMPOSITES FOR:",var_code, "using", combine_function)) 
+print(paste("PROCESSING MONTHLY COMPOSITES FOR:",var_code, "using")) 
+print(combine_function)
 ###########
-
 lifiday = list.files(paste0(grdpath), pattern = paste0(var_code,".grd"), full.names = T)
 datestr = str_extract(string = lifiday, pattern = "[0-9]{7}")
 daystr = as.numeric(substr(datestr,5,7))

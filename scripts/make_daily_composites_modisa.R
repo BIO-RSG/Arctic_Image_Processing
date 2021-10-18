@@ -29,9 +29,9 @@ lonmax = -110
 lonmin = -142
 latmax = 76
 latmin = 67.5
-print(paste("PROCESSING DAILY COMPOSITES FOR:",var_code)) 
-print(paste("USING:", combine_function,
-            "with", ifelse(albedo_box == TRUE, "box crop for raised albedo", 
+print(paste("PROCESSING DAILY COMPOSITES FOR:",var_code, "USING:")) 
+print(combine_function)
+print(paste("with", ifelse(albedo_box == TRUE, "box crop for raised albedo", 
                            "polygon crop for raised albedo")))
 
 ###########
