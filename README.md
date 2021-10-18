@@ -13,7 +13,7 @@ Scripts here currently for L2 MODISA and above.
 
 If you place all L2 files to be processed in the `./data` folder, you should not have to change file paths. Test files included in data folder are `./data/A2020241203000.L2` and `./data/A2020241203000delta.L2`
 
-**`./scripts/01_L2_to_Composite.sh`** runs all steps to process L2 files to monthly composites. 
+**`01_L2_to_Composite.sh`** runs all steps to process L2 files to monthly composites. 
 
 #### 01_L2_to_Composite.sh:
 
