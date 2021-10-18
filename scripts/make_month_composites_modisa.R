@@ -10,7 +10,7 @@ library(ncdf4)
 library(stringr)
 library(sp)
 
-###########
+########### PARAMS:
 combine_function = "median" 
 # "median", "mean", "sd", etc, or define own function here. 
 # e.g. for pixel depth:

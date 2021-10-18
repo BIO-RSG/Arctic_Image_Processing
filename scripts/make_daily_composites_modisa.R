@@ -9,8 +9,12 @@ library(ncdf4)
 library(stringr)
 library(sp)
 
-###########
-combine_function = "median" # "median", "mean", etc. See line 114
+########### PARAMS:
+combine_function = "median" # 
+# "median", "mean", "sd", etc, or define own function here. 
+# e.g. for pixel depth:
+#combine_fuction = function(x,...) { sum(is.finite(x))}
+
 var_code <- "han" # Variable to find data for "sst", "dox","han" etc based on file extension
 albedo_box = TRUE # TRUE = crop high albedo to box area, FALSE = Shapefile boundary of high albedo processing
 if (albedo_box) {
@@ -19,6 +23,7 @@ if (albedo_box) {
   lonmin_a = -138.9
   lonmax_a = -133.4
 }
+# Latitude and longitude boundaries of study area
 lonmax=-110
 lonmin=-142
 latmax=76
