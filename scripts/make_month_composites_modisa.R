@@ -16,7 +16,7 @@ combine_function = "median"
 # e.g. for pixel depth:
 #combine_fuction = function(x,...) { sum(is.finite(x))}
                                                  
-var_code <- "dox" # Variable to find data for "sst", "dox","han" etc based on file extension
+var_code <- "han" # Variable to find data for "sst", "dox","han" etc based on file extension
 lonmax=-110
 lonmin=-142
 latmax=76
