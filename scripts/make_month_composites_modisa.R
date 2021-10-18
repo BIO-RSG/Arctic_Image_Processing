@@ -2,9 +2,9 @@
 # Emmanuel Devred / Andrea Hilborn 2020
 
 # Make daily composites using the median of all images available in (per pixel)
-grdpath = "../data/Composites/daily" # where the GRD files to composite are
-mapjpgpath = "./" # where script is to make maps
-writefiles = "../data/Composites/monthly"
+grdpath = "./data/Composites/daily/" # where the GRD files to composite are
+mapjpgpath = "./scripts/" # where script is to make maps
+writefiles = "./data/Composites/monthly/"
 
 library(ncdf4)
 library(stringr)
@@ -64,7 +64,7 @@ for (iyear in unique(yrstr)) {
       indk=is.finite(medgeovar)
       
       # Write out GRD files, number of available imgs in month
-      outfile=paste0(writefiles,"/A", iyear, 
+      outfile=paste0(writefiles,"A", iyear, 
                      "_month", 
                      str_pad(imonth, width = 2, side = "left", pad = "0"), 
                      "_n",
@@ -73,7 +73,7 @@ for (iyear in unique(yrstr)) {
       write.table(cbind(matlon[indk],matlat[indk],medgeovar[indk]),outfile,
                   row.names=F,col.names=F,quote=F)
       
-      grdfile=paste0(writefiles,"/A", iyear, 
+      grdfile=paste0(writefiles,"A", iyear, 
                      "_month", 
                      str_pad(imonth, width = 2, side = "left", pad = "0"), 
                      "_n",

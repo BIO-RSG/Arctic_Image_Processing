@@ -2,9 +2,9 @@
 # Emmanuel Devred / Andrea Hilborn 2020
 
 # Make daily composites using the median of all images available in (per pixel)
-grdpath = "../data" # where the GRD files to composite are
-mapjpgpath = "./" # where script is to make maps
-writefiles = "../data/Composites/daily"
+grdpath = "./data/" # where the GRD files to composite are
+mapjpgpath = "./scripts/" # where script is to make maps
+writefiles = "./data/Composites/daily/"
 
 library(ncdf4)
 library(stringr)
@@ -29,7 +29,7 @@ lonmax = -110
 lonmin = -142
 latmax = 76
 latmin = 67.5
-print(paste("PROCESSING DAILY COMPOSITES FOR:",var_code,"USING:")) 
+print(paste("PROCESSING DAILY COMPOSITES FOR:",var_code, "USING:")) 
 print(combine_function)
 print(paste("with", ifelse(albedo_box == TRUE, "box crop for raised albedo", 
                            "polygon crop for raised albedo")))
@@ -118,10 +118,10 @@ for (i in 1:length(nbday))
     indk=is.finite(medgeovar)
     
     # Write out GRD files
-    outfile=paste0(writefiles,"/A",nbday[i],var_code,".asc")
+    outfile=paste0(writefiles,"A",nbday[i],var_code,".asc")
     write.table(cbind(matlon[indk],matlat[indk],medgeovar[indk]),outfile,
           row.names=F,col.names=F,quote=F)
-    grdfile=paste0(writefiles,"/A",nbday[i],var_code,".grd")
+    grdfile=paste0(writefiles,"A",nbday[i],var_code,".grd")
     cmdgrd=paste0("gmt xyz2grd ",outfile," -G",grdfile," -I1100e -R/",lonmin,"/",lonmax,"/",latmin,"/",latmax," -V")
     system(cmdgrd)
     
