@@ -19,7 +19,7 @@ var_code <- "han" # Variable to find data for "sst", "dox","han" etc based on fi
 albedo_box = TRUE # TRUE = crop high albedo to box area, FALSE = Shapefile boundary of high albedo processing
 if (albedo_box) {
   latmin_a = 68.7
-  latmax_a = 69.3
+  latmax_a = 69.6
   lonmin_a = -138.9
   lonmax_a = -133.4
 }
