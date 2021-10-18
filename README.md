@@ -6,7 +6,7 @@ Scripts here currently for L2 MODISA and above.
 
 ### Software:
 * R (packages ncdf4, stringr, sp)
-* Python (> v3 with numpy and netCDF4)
+* Python (v3 with numpy and netCDF4)
 * GMT 
 
 ### Steps:
