@@ -2,7 +2,7 @@
 # Emmanuel Devred / Andrea Hilborn 2020
 
 # Make daily composites using the median of all images available in (per pixel)
-grdpath = "../data/Composites/daily" # where the GRD files to composite are. This script assue folder structure is GRD/year/day
+grdpath = "../data/Composites/daily" # where the GRD files to composite are
 mapjpgpath = "./" # where script is to make maps
 writefiles = "../data/Composites/monthly"
 
@@ -15,13 +15,13 @@ combine_function = "median"
 # "median", "mean", "sd", etc, or define own function here. 
 # e.g. for pixel depth:
 #combine_fuction = function(x,...) { sum(is.finite(x))}
-                                                 
+make_jpgs=TRUE
 var_code <- "han" # Variable to find data for "sst", "dox","han" etc based on file extension
 lonmax=-110
 lonmin=-142
 latmax=76
 latmin=67.5
-print(paste("PROCESSING MONTHLY COMPOSITES FOR:",var_code)) 
+print(paste("PROCESSING MONTHLY COMPOSITES FOR:",var_code, "using", combine_function)) 
 ###########
 
 lifiday = list.files(paste0(grdpath), pattern = paste0(var_code,".grd"), full.names = T)
@@ -81,11 +81,12 @@ for (iyear in unique(yrstr)) {
                      "_", var_code,".grd")
       cmdgrd=paste0("gmt xyz2grd ",outfile," -G",grdfile," -I1100e -R/",lonmin,"/",lonmax,"/",latmin,"/",latmax," -V")
       system(cmdgrd)
-      if (var_code == "dox" | var_code == "han") {
-        cmdgmt=paste0("bash ",mapjpgpath,"map_spm_month_composite.sh ", substr(grdfile,1,nchar(grdfile)-4))
-      } 
-      system(cmdgmt)
-      
+      if (make_jpgs == TRUE) {
+        if (var_code == "dox" | var_code == "han") {
+          cmdgmt=paste0("bash ",mapjpgpath,"map_spm_month_composite.sh ", substr(grdfile,1,nchar(grdfile)-4))
+        } 
+        system(cmdgmt)
+      }
     } else {
       print(paste("no images for:",iyear,imonth))
     }

@@ -1,12 +1,14 @@
 #!/bin/bash
+# Steps to process L2 to month composites
 
+# 0. Study area: 
 lonmax=-110
 lonmin=-142
 latmax=76
 latmin=67.5
 
-# Details:
-# - To check number of pixels in L2 image can uncomment the following (or add min pixel count into compute_spm_modisa.py):
+# Notes:
+# - Before processing, to check minimum number of pixels in L2 image can uncomment the following (or change line 149 in compute_spm_modisa.py):
 
 #for l2name in ../data/A*.L2;
 #do
@@ -19,9 +21,6 @@ latmin=67.5
 #	fi
 #	nbvalpix=""
 #done
-
-# - compute SPM, and filter/grid other vars
-# - grid with GMT, and map 
 
 #### 1. ####
 # L2 NASA flags, q/c and calculate SPM for all L2 files in 'data' directory:
