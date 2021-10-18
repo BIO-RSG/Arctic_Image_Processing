@@ -17,7 +17,7 @@ def main(*args):
   solz_layer=True
   solz_max=74 # Filtering solz layer created in L2 processing 
                 #- remove and use HISOLZEN if no solz layer
-                #- also remove solz from line 105
+                
   ####
   
   ifile=str(sys.argv[1])+'.L2'
@@ -127,7 +127,7 @@ def main(*args):
   indgt3 = np.where(rrs_ratio > 94.)
   spm[indgt3]=3.922*rrs_ratio[indgt3]-285.4
 
-  # SPM Han et al. Remote Sensing 2016;
+  # SPM Han et al. Remote Sensing 2016:
   rhow_667 = rrs_667[ind] * np.pi
   spmL = 404.4 * rhow_667 / (1. - rhow_667 / 0.5)
   spmH = 1214.669 * rhow_667 / (1. - rhow_667 / 0.3394)
