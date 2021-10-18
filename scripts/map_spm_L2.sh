@@ -28,7 +28,7 @@ cp $filename tmpspm.grd
 # Map
 gmt grdview  tmpspm.grd -Cspm.cpt ${region} $J -K -V -Ts -P > ${filename}.ps
 gmt pscoast  $region $J -B4g2/a2g2 -W  -Dh -G180/180/180 -K -O -P  >> ${filename}.ps
-gmt psscale -D8c/13.5c+w9.5c/0.5c+h+jCT+m+e -O -K -Q -B2+l"SPM@-Han@- g m@+-3@+" -Cspm.cpt -P >> ${filename}.ps
+gmt psscale -D8c/13.5c+w9.5c/0.5c+h+jCT+m+e -O -K -Q -B2+l"SPM g m@+-3@+" -Cspm.cpt -P >> ${filename}.ps
 gmt pstext -R0/24/0/30 -JX16/16 -G255/255/255 -O -V -N -P  << EOF >> ${filename}.ps
 12.4 2.8 18 0 4 LCB $year $day ${timestamp:0:2}:${timestamp:2:2}:${timestamp:4:2}
 EOF

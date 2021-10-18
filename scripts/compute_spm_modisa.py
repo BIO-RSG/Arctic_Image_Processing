@@ -138,24 +138,28 @@ def main(*args):
     
   nb_good_pxl=longikeep[indmes].size
   print(longitude.size)
-  print(nb_good_pxl)
+  # print(nb_good_pxl)
   
-  #### Save data ####
-  out_data=np.zeros((nb_good_pxl,7))-999.
-  out_data[:,0]=longikeep[indmes]
-  out_data[:,1]=latikeep[indmes]
-  out_data[:,2]=spmhan[indmes] 
-  out_data[:,3]=spm[indmes]
-  # out_data[:,4]=kdlee_data[indmes]
-  out_data[:,4]=sst_data[indmes]
-  out_data[:,5]=par_data[indmes]
-  
-  print(np.min(spmhan[indmes]))
-  print(np.max(spmhan[indmes]))
-
-  f = open(ofile, 'w')
-  np.savetxt(ofile, out_data, fmt='%15.10f')
-  f.close()
+  if nb_good_pxl>0:
+      print(nb_good_pxl,"valid pixels in file")
+      #### Save data ####
+      out_data=np.zeros((nb_good_pxl,7))-999.
+      out_data[:,0]=longikeep[indmes]
+      out_data[:,1]=latikeep[indmes]
+      out_data[:,2]=spmhan[indmes] 
+      out_data[:,3]=spm[indmes]
+      # out_data[:,4]=kdlee_data[indmes]
+      out_data[:,4]=sst_data[indmes]
+      out_data[:,5]=par_data[indmes]
+      
+      print(np.min(spmhan[indmes]))
+      print(np.max(spmhan[indmes]))
+    
+      f = open(ofile, 'w')
+      np.savetxt(ofile, out_data, fmt='%15.10f')
+      f.close()
+  else:
+      print("Zero valid pixels in file")
 
 #--------------------------
 #       Command Line
