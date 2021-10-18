@@ -8,7 +8,7 @@ writefiles = "../data/Composites/monthly"
 
 library(ncdf4)
 library(stringr)
-library(sp)
+
 
 ########### PARAMS:
 combine_function = "median" 
