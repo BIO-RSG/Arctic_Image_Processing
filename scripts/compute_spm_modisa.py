@@ -117,6 +117,7 @@ def main(*args):
   sst_data = sst[ind]
   #kdlee_data = kdlee[ind]
   par_data = par[ind]
+  rrs_667 = rrs_667[ind]
   
   ##### SPM ####
   # SPM Ratio algorithm, Doxaran et al. Biogeosciences 2012, 2015: 
@@ -128,15 +129,15 @@ def main(*args):
   spm[indgt3]=3.922*rrs_ratio[indgt3]-285.4
 
   # SPM Han et al. Remote Sensing 2016:
-  rhow_667 = rrs_667[ind] * np.pi
+  rhow_667 = rrs_667 * np.pi
   spmL = 404.4 * rhow_667 / (1. - rhow_667 / 0.5)
   spmH = 1214.669 * rhow_667 / (1. - rhow_667 / 0.3394)
-  WL = np.log10(0.04) - np.log10(rhow_667)
-  WL[rhow_667 >= 0.04] = 0.
-  WL[rhow_667 <= 0.03] = 1.
-  WH = np.log10(rhow_667) - np.log10(0.03)
-  WH[rhow_667 >= 0.04] = 1.
-  WH[rhow_667 <= 0.03] = 0.
+  WL = np.log10(0.04) - np.log10(rrs_667)
+  WL[rrs_667 >= 0.04] = 0.
+  WL[rrs_667 <= 0.03] = 1.
+  WH = np.log10(rrs_667) - np.log10(0.03)
+  WH[rrs_667 >= 0.04] = 1.
+  WH[rrs_667 <= 0.03] = 0.
   spmhan = (WL * spmL + WH * spmH) / (WL + WH)
   
   # Keeping indices with valid SPM range
